@@ -29,6 +29,9 @@ def get_page_content(start_index, start_date, end_date):
 def get_total_results(html_content):
 ```
 ```python
+def extract_article_info(html_content)
+```
+```python
 def save_to_json(data, filename="ARXIV_DATA.json"):
 ```
 ```python
@@ -36,9 +39,6 @@ def get_next_year(year, month):
 ```
 ```python
 def fetch_articles_for_period(start_date, end_date):
-```
-```python
-def search_by_monthly_segments(start_year, end_year):
 ```
 ```python
 def search_by_monthly_segments(start_year, end_year):
