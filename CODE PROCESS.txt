@@ -1,0 +1,29 @@
+1.Explication de l'appel des fonctions dans main
+Appel de main(start_year, end_year) : En appelant cette ligne, vous lancez le programme avec les années de début et de fin définies. Cela signifie que main(2021, 2022) cherchera tous les articles entre janvier 2021 et décembre 2022.
+
+2. Fonction main :
+La fonction main appelle search_by_monthly_segments(start_year, end_year), ce qui démarre le processus de recherche d'articles sur la période spécifiée.
+
+3. Fonction search_by_monthly_segments(start_year, end_year) :
+Cette fonction crée une boucle sur chaque mois de la période définie.
+Pour chaque mois, elle définit les dates de début (start_date) et de fin (end_date) et appelle fetch_articles_for_period(start_date, end_date) pour récupérer les articles publiés pendant ce mois.
+
+4.Fonction fetch_articles_for_period(start_date, end_date) :
+Cette fonction récupère tous les articles disponibles pour chaque plage de dates, en utilisant get_page_content pour obtenir le contenu HTML de chaque page de résultats.
+Elle analyse ensuite le contenu avec extract_article_info pour extraire les informations de chaque article.
+Elle continue ce processus jusqu'à avoir récupéré tous les articles ou atteint la limite de 10 000 articles (fixée par arXiv).
+
+5. Enregistrement des résultats avec save_to_json 
+Après que search_by_monthly_segments ait fini de récupérer tous les articles de la période définie, elle appelle save_to_json(all_articles) pour enregistrer les résultats dans un fichier JSON.
+
+En somme, chaque fonction est appelée de manière imbriquée dans main.
+
+
+==== DIFFICULTES ==== 
+
+1. Il a fallut contourner la contrainte de 10 000 articles. A 10 000 articles le site renvoyait automatiquement une erreur 400. 
+-> Pour cela, on à du passer par la recherche avancée et faire une recherche par mois afin de limiter une recherche d'article qui ne va pas au dessus de 10 000
+--> Référence à la partie du code "search_by_monthly_segments"
+
+2. On avait une perte donnée, sur certaines année car lorsque qu'on recherchait sur une même année exemple : 1991-01-01 TO 1991-12-31, il ne trouvait pas d'article(s) alors qu'il y en avait
+-> Référence à la partie du code "Fetch_articles_for_period" 
