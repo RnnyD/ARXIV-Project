@@ -1,66 +1,139 @@
-# [ARXIV](https://arxiv.org/)  ![N|Solid](https://i.postimg.cc/Kcr3wqd1/brand-logo-primary.jpg)
+Services
+Documents
+Dillinger.md
+Preview as 
+Export as 
+Save to 
+Import from 
+Document Name
+Dillinger.md
+Reading Time: 3 min read Words: 537Characters: 3725
+MarkdownToggle Zen ModePreviewToggle Mode
+  
+N|Solid
 
-## _SCRAPING d'articles_
+The Last Markdown Editor, Ever N|Solid
+<div align=“center”>
+Ce texte sera centré
+</div>
 
+Build Status
 
-**Qu'est ce que ARXIV ?**
-Arxiv est un site d'archive sur une multitude de sujets scientifiques. On peut retrouver des articles sur le domaine de la physique, des mathématiques, de l'informatique, de la biologie quantitative, des statistiques, de l'ingénierie électrique, de l'ingénierie des systèmes et de l'économie.
+Dillinger is a cloud-enabled, mobile-ready, offline-storage compatible,
+AngularJS-powered HTML5 Markdown editor.
 
-**L'intérêt du programme ?**
-Il va nous servir à récupérer des des informations sur des articles dans le domaine de l'informatique et plus précisément de l'intelligence artificielle. Cela nous permettra de faire une correlation avec d'autres données provenant d'autres sites.
-
-### Program's Features 
-- Itération dans le site ARXIV 
-- Récupération des liens d'articles
-- Récupération des titres, dates d'articles
-
-### Bibliothèques 
-```python
-import requests
-from bs4 import BeautifoulSoup
-import json
-import datetime
-```
-### Functions
-```python
+Type some Markdown on the left
+See HTML in the right
+✨Magic ✨
+Features
+Import a HTML file and watch it magically convert to Markdown
+Drag and drop images (requires your Dropbox account be linked)
+Import and save files from GitHub, Dropbox, Google Drive and One Drive
+Drag and drop markdown and HTML files into Dillinger
+Export documents as Markdown, HTML and PDF
+Functions
 def get_page_content(start_index, start_date, end_date):
-```
-```python
 def get_total_results(html_content):
-```
-```python
-def save_to_json(data, filename="ARXIV_DATA.json"):
-```
-```python
-def get_next_year(year, month):
-```
-```python
-def fetch_articles_for_period(start_date, end_date):
-```
-```python
-def search_by_monthly_segments(start_year, end_year):
-```
-```python
-def search_by_monthly_segments(start_year, end_year):
-```
-```python
-def main(start_year, end_year):
-```
+The overriding design goal for Markdown’s
+formatting syntax is to make it as readable
+as possible. The idea is that a
+Markdown-formatted document should be
+publishable as-is, as plain text, without
+looking like it’s been marked up with tags
+or formatting instructions.
 
-### Donnés voulues : 
+This text you see here is *actually- written in Markdown! To get a feel
+for Markdown’s syntax, type some text into the left window and
+watch the results in the right.
 
-```python
-[
-    {
-        "title": "Titre de l'article",
-        "link": "Lien de l'article",
-        "date_epoch": "Date format EPOCH"
-    }
-]    
-```
+Tech
+Dillinger uses a number of open source projects to work properly:
 
-### Rendue Finale 
+AngularJS - HTML enhanced for web apps!
+Ace Editor - awesome web-based text editor
+markdown-it - Markdown parser done right. Fast and easy to extend.
+Twitter Bootstrap - great UI boilerplate for modern web apps
+node.js - evented I/O for the backend
+Express - fast node.js network app framework @tjholowaychuk
+Gulp - the streaming build system
+Breakdance - HTML
+to Markdown converter
+jQuery - duh
+And of course Dillinger itself is open source with a public repository
+on GitHub.
 
-![N|Solid](https://i.postimg.cc/Fsbtjck5/Capture-d-cran-2024-11-15-105532.png)
+Installation
+Dillinger requires Node.js v10+ to run.
 
-##### **See Ya! ️👾**
+Install the dependencies and devDependencies and start the server.
+
+cd dillinger
+npm i
+node app
+For production environments…
+
+npm install --production
+NODE_ENV=production node app
+Plugins
+Dillinger is currently extended with the following plugins.
+Instructions on how to use them in your own application are linked below.
+
+Plugin	README
+Dropbox	plugins/dropbox/README.md
+GitHub	plugins/github/README.md
+Google Drive	plugins/googledrive/README.md
+OneDrive	plugins/onedrive/README.md
+Medium	plugins/medium/README.md
+Google Analytics	plugins/googleanalytics/README.md
+Development
+Want to contribute? Great!
+
+Dillinger uses Gulp + Webpack for fast developing.
+Make a change in your file and instantaneously see your updates!
+
+Open your favorite Terminal and run these commands.
+
+First Tab:
+
+node app
+Second Tab:
+
+gulp watch
+(optional) Third:
+
+karma test
+Building for source
+For production release:
+
+gulp build --prod
+Generating pre-built zip archives for distribution:
+
+gulp build dist --prod
+Docker
+Dillinger is very easy to install and deploy in a Docker container.
+
+By default, the Docker will expose port 8080, so change this within the
+Dockerfile if necessary. When ready, simply use the Dockerfile to
+build the image.
+
+cd dillinger
+docker build -t <youruser>/dillinger:${package.json.version} .
+This will create the dillinger image and pull in the necessary dependencies.
+Be sure to swap out ${package.json.version} with the actual
+version of Dillinger.
+
+Once done, run the Docker image and map the port to whatever you wish on
+your host. In this example, we simply map port 8000 of the host to
+port 8080 of the Docker (or whatever port was exposed in the Dockerfile):
+
+docker run -d -p 8000:8080 --restart=always --cap-add=SYS_ADMIN --name=dillinger <youruser>/dillinger:${package.json.version}
+Note: --capt-add=SYS-ADMIN is required for PDF rendering.
+
+Verify the deployment by navigating to your server address in
+your preferred browser.
+
+127.0.0.1:8000
+License
+MIT
+
+Free Software, Hell Yeah!
