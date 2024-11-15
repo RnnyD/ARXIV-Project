@@ -29,7 +29,7 @@ def get_page_content(start_index, start_date, end_date):
 def get_total_results(html_content):
 ```
 ```python
-def extract_article_info(html_content)
+def extract_article_info(html_content):
 ```
 ```python
 def save_to_json(data, filename="ARXIV_DATA.json"):
