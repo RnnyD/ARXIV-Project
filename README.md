@@ -11,8 +11,7 @@ Il va nous servir à récupérer des des informations sur des articles dans le d
 
 ### Program's Features 
 - Itération dans le site ARXIV 
-- Récupération des liens d'articles
-- Récupération des titres, dates d'articles
+- Récupération les liens, titres, dates d'articles
 
 ### Bibliothèques 
 ```python
